@@ -20,15 +20,16 @@ print(
     "2. Calculate and display the distribution of all possible combinations that can be obtained when rolling both Die A and Die B together. Show the math along with the code!Hint: A 6 x 6 Matrix."
 )
 
-distribution_array = []
+distribution= {}
 
-for i in dice_a:
-    distribution_i = []
-    for j in dice_b:
-        distribution_i.append(combinations.count((i, j)) + combinations.count((j, i)))
-    distribution_array.append(distribution_i)
+for i in range(1,7):
+    for j in range(1,7):
+        if i+j not in distribution:
+            distribution[i+j]=[]
+        distribution[i+j].append((i,j))
+  
 
-print(distribution_array)
+print(distribution)
 
 print(
     "3. Calculate the Probability of all Possible Sums occurring among the number of combinations from (2). Example: P(Sum = 2) = 1/X as there is only one combination possible to obtain Sum = 2. Die A = Die B = 1."
@@ -42,7 +43,7 @@ for i in dice_a:
         sum_row.append(i + j)
     sums.append(sum_row)
 
-sums_probability = [0, 0]
+sums_probability = []
 
 for i in range(2, 13):
     occurance = 0
@@ -54,9 +55,7 @@ print(sums_probability)
 
 print("---------- PART B -----------")
 
-
-
-
+print("----New pair formed-----")
 def undoom_dice(org_Dice1,org_Dice2):
     def sum_of_dice(die_A, die_B):
         Dict = dict()
@@ -64,7 +63,7 @@ def undoom_dice(org_Dice1,org_Dice2):
             for j in die_B:
                 sum = i + j
                 if sum in Dict:
-                    Dict[sum] = Dict[sum] + 1
+                    Dict[sum] += 1
                 else:
                     Dict[sum] = 1
         return(Dict)
