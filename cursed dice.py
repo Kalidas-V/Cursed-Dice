@@ -72,12 +72,12 @@ def undoom_dice(org_Dice1,org_Dice2):
 
     def all_dice():
         array= []
-        for x2 in range(2, 11):
-            for x3 in range (x2, 11):
-                for x4 in range (x3, 11):
-                   for x5 in range (x4, 11):
-                        for x6 in range (x5, 11):
-                            array.append([1,x2,x3,x4,x5,x6])
+        for a in range(2, 11):
+            for b in range (a, 11):
+                for c in range (b, 11):
+                   for d in range (c, 11):
+                        for e in range (d, 11):
+                            array.append([1,a,b,c,d,e])
         return array
 
 
