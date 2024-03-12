@@ -52,7 +52,7 @@ for i in range(2, 13):
 
 print(sums_probability)
 
-print("---------- PART B ----------")
+print("---------- PART B -----------")
 
 
 
