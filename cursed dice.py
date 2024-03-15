@@ -50,8 +50,13 @@ for i in range(2, 13):
     for row in sums:
         occurance += row.count(i)
     sums_probability.append(occurance)
+percent=[]
 
-print(sums_probability)
+for i in sums_probability:
+   percent.append(round((i / 36) * 100, 2))
+
+print(percent)
+    
 
 print("---------- PART B -----------")
 
